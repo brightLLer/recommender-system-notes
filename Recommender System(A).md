@@ -12,6 +12,12 @@
 
 电影的评分可以作为推荐的依据，不过这样存在一个问题：如果电影A的平均评分是7分，评分人数是100人，而电影B的平均评分是9分，评分人数是1000人，那么推荐系统极有可能认为电影B比电影A更好，但实际上我们知道两部电影的打分人数很不平衡。这就导致了一种趋势：打分人数少的电影可能会呈现出“扭曲”或者“极端”高的评分。为了解决这一问题，提出如下一种加权评分(weighted rating/WR)的方法：
 ![](http://latex.codecogs.com/gif.latex?WR=(\\frac{v}{v+m}\\times R)+(\\frac{m}{v+m}\\times C))
+![](http://latex.codecogs.com/gif.latex?\\frac{\\partial J}{\\partial \\theta_k^{(j)}}=\\sum_{i:r(i,j)=1}{\\big((\\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\\big)x_k^{(i)}}+\\lambda \\xtheta_k^{(j)})
+
+作者：Deep Reader
+链接：https://www.zhihu.com/question/26887527/answer/43166739
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 其中：
 $v$：一部电影的打分人数；$m$：人为设置的符合要求的最少打分人数；
 $R$：一部电影的平均分；$C$：所有电影的平均分
